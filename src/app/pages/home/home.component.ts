@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Task } from '../../models/task.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  tasks: Task[] = [];
 
-  ngOnInit(): void {
-  }
+  constructor(
+  ) { }
+
+  // ngOnInit(): void {
+  // }
 
 }

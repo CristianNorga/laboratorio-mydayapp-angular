@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "npm run build && playwright test",
-    "e2e:install": "playwright install",
+    "e2e:install": "npx playwright install",
+    "e2e-i-2": "sudo npx playwright install-deps",
     "lint": "ng lint"
   },
   "private": true,
