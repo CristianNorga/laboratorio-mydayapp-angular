@@ -28,6 +28,12 @@ export class TasksService {
     this.itemsSource.next(this.tasks)
   }
 
+  editTask(task: Task, index: number){
+    this.tasks[index] = {
+      ...task
+    }
+  }
+
   changeState(tasks: Task[]): void{
     this.tasks = tasks
   }

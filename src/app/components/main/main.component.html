@@ -6,15 +6,7 @@
         <label (dblclick)="enableEdit(i)">{{task.name}}</label>
         <button class="destroy"></button>
       </div>
-      <input class="edit" [value]="task.name" />
+      <input (keyup.enter)="captureText($event, i)" (keyup.escape)="discardChanges(i)" #editInput class="edit" [value]="task.name" />
     </li>
-    <!-- <li class="editing">
-      <div class="view">
-        <input class="toggle" type="checkbox" />
-        <label>Make dishes</label>
-        <button class="destroy"></button>
-      </div>
-      <input class="edit" value="Make dishes" />
-    </li> -->
   </ul>
 </section>

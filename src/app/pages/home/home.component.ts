@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   tasks: Task[] = [];
 
+
   constructor(private tasksService: TasksService) { }
 
   ngOnInit() {
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
     text = text.trim();
     if (!text) return;
 
-    this.tasksService.addTask(text)
+    this.tasksService.addTask(text);
+    event.target.value = '';
   }
 
 }
