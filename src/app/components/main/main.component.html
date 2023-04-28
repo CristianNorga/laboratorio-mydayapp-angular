@@ -1,5 +1,15 @@
 <section class="main">
   <ul class="todo-list">
+    <h2>reales</h2>
+    <li *ngFor="let task of tasks" [ngClass]="{'completed': (task.state === 'completed')}">
+      <div class="view">
+        <input class="toggle" type="checkbox" [checked]="(task.state === 'completed')"/>
+        <label>{{task.name}}</label>
+        <button class="destroy"></button>
+      </div>
+      <input class="edit" [value]="task.name" />
+    </li>
+    <h2>ejemplos</h2>
     <li class="completed">
       <div class="view">
         <input class="toggle" type="checkbox" checked />

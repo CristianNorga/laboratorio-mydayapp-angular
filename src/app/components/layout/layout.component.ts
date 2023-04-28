@@ -8,5 +8,9 @@ import { Task } from 'src/app/models/task.model';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
-  @Input() tasks: Task[] = [];
+  @Input() test: Task[] = [];
+  // @Input('test')
+  // set changeImg(newImg: string) {
+  //   this.img = newImg;
+  // }
 }

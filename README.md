@@ -108,14 +108,14 @@ Para crear una aplicación de tareas consistente y útil para los usuarios, la a
 
 ### 1. Ocultar las secciones main y footer
 
-- Cuando no hay tareas, los elementos con ID `#main` y `#footer` deberían estar ocultos.
+- Cuando no hay tareas, los elementos con ID `#main` y `#footer` deberían estar ocultos.✔
 
 ### 2. Crear una nueva tarea.
 
-- Se debe crear una nueva tarea se debe usar el input principal de la aplicación.
-- Este input debe enfocarse cuando se cargue la página, preferiblemente utilizando el atributo `autofocus` en el input.
-- Al presionar la tecla Enter la tarea se crea con el estado **pending** y se agrega a la lista de tareas y el input debería quedar en limpio.
-- Asegúrate de usar métodos como `.trim()` para limpiar espacios al inicio o al final y verifica que la tarea no sea un `string` vacío.
+- Se debe crear una nueva tarea se debe usar el input principal de la aplicación.✔
+- Este input debe enfocarse cuando se cargue la página, preferiblemente utilizando el atributo `autofocus` en el input.✔
+- Al presionar la tecla Enter la tarea se crea con el estado **pending** y se agrega a la lista de tareas y el input debería quedar en limpio.✔
+- Asegúrate de usar métodos como `.trim()` para limpiar espacios al inicio o al final y verifica que la tarea no sea un `string` vacío.✔
 
 ### 3. Una tarea
 
