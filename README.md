@@ -138,15 +138,15 @@ Una tarea debería tener 3 posibles interacciones:
 - Asegúrese de que el número esté envuelto por una etiqueta `<strong>`.✔
 - También asegúrese de pluralizar la palabra `item` correctamente, por ejemplo: `0 items`, `1 item`, `2 items`.✔
 
-### 6. Botón de limpiar
+### 6. Botón de limpiar ✔
 
 - Debería existir un botón para eliminar todas las tareas que están con estado de **completed**.✔
 
 ### 7. Persistencia
 
-- Cuando se recargue la aplicación se debe obtener las tareas, para esto tu aplicación debería guardar las tareas en LocalStorage.
-- El key que se debe usar para el LocalStorage debe ser `mydayapp-angular`, esto es importante ya que las [pruebas e2e](#pruebas) van a verificar el LocalStorage con esta la key `mydayapp-angular`.
-- NO es necesario persistir estados de la interfaz como por ejemplo guardar el modo de edición. Solo se debe guardar las tareas.
+- Cuando se recargue la aplicación se debe obtener las tareas, para esto tu aplicación debería guardar las tareas en LocalStorage.✔
+- El key que se debe usar para el LocalStorage debe ser `mydayapp-angular`, esto es importante ya que las [pruebas e2e](#pruebas) van a verificar el LocalStorage con esta la key `mydayapp-angular`.✔
+- NO es necesario persistir estados de la interfaz como por ejemplo guardar el modo de edición. Solo se debe guardar las tareas.✔
 
 ### 8. Filtros y rutas
 

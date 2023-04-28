@@ -16,6 +16,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.tasksService.currentItems.subscribe(newData => this.tasks = newData)
+
+    let laodStore = localStorage.getItem('mydayapp-angular');
+    if (laodStore){
+      this.tasksService.loadData(laodStore);
+    } else {
+      localStorage.setItem('mydayapp-angular', '[]');
+    }
+
   }
 
   captureText(event: any): void{
