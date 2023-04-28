@@ -4,7 +4,7 @@
       <div class="view">
         <input (click)="mark(i)" class="toggle" type="checkbox" [checked]="task.isCompleted"/>
         <label (dblclick)="enableEdit(i)">{{task.name}}</label>
-        <button class="destroy"></button>
+        <button (click)="deleteTask(i)" class="destroy"></button>
       </div>
       <input (keyup.enter)="captureText($event, i)" (keyup.escape)="discardChanges(i)" #editInput class="edit" [value]="task.name" />
     </li>

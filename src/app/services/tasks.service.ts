@@ -23,8 +23,6 @@ export class TasksService {
 
     this.tasks.push(task)
 
-    console.log('TasksService.addTask', task)
-
     this.itemsSource.next(this.tasks)
   }
 
@@ -37,6 +35,16 @@ export class TasksService {
 
   changeState(tasks: Task[]): void{
     this.tasks = tasks
+    this.itemsSource.next(this.tasks)
+  }
+
+  deleteTask(index: number): void{
+    this.tasks.splice(index, 1);
+    this.itemsSource.next(this.tasks)
+  }
+
+  clearCompleted():void{
+    this.tasks = this.tasks.filter(task => !task.isCompleted);
     this.itemsSource.next(this.tasks)
   }
 }

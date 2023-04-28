@@ -20,4 +20,8 @@ export class FooterComponent implements OnInit{
       this.pending = newData.filter(task => !task.isCompleted).length
     })
   }
+
+  clearCompleted(){
+    this.tasksService.clearCompleted();
+  }
 }

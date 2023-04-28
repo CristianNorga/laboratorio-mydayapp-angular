@@ -53,4 +53,8 @@ export class MainComponent implements OnInit, OnDestroy {
     this.tasks[index].isEdit = false;
     this.editInputs.toArray()[index].nativeElement.value = this.tasks[index].name;
   }
+
+  deleteTask(index: number){
+    this.tasksService.deleteTask(index);
+  }
 }
