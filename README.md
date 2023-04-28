@@ -125,7 +125,7 @@ Una tarea debería tener 3 posibles interacciones:
 2. Si se hace doble clic en el  `<label>` se activa el modo edición.✔
 3. Si se hace la acción `:hover` en una tarea se debería mostrar el botón para eliminar (`.destroy`).✔
 
-### 4. Editando una tarea
+### 4. Editando una tarea ⚠
 
 - Cuando el modo edición está activado, se deberían ocultar los otros elementos y se mostrará un input que contiene el título de la tarea pendiente, que debe estar enfocado (`.focus()`).✔
 - La edición debe guardarse cuando se presione la tecla Enter y salir del modo edición.✔
@@ -134,9 +134,9 @@ Una tarea debería tener 3 posibles interacciones:
 
 ### 5. Contador
 
-- En el footer se debería mostrar el número de tareas en estado **pending**.
-- Asegúrese de que el número esté envuelto por una etiqueta `<strong>`.
-- También asegúrese de pluralizar la palabra `item` correctamente, por ejemplo: `0 items`, `1 item`, `2 items`.
+- En el footer se debería mostrar el número de tareas en estado **pending**.✔
+- Asegúrese de que el número esté envuelto por una etiqueta `<strong>`.✔
+- También asegúrese de pluralizar la palabra `item` correctamente, por ejemplo: `0 items`, `1 item`, `2 items`.✔
 
 ### 6. Botón de limpiar
 
