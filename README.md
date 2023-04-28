@@ -110,7 +110,7 @@ Para crear una aplicación de tareas consistente y útil para los usuarios, la a
 
 - Cuando no hay tareas, los elementos con ID `#main` y `#footer` deberían estar ocultos.✔
 
-### 2. Crear una nueva tarea.
+### 2. Crear una nueva tarea. ⚠
 
 - Se debe crear una nueva tarea se debe usar el input principal de la aplicación.✔
 - Este input debe enfocarse cuando se cargue la página, preferiblemente utilizando el atributo `autofocus` en el input.✔
@@ -121,9 +121,9 @@ Para crear una aplicación de tareas consistente y útil para los usuarios, la a
 
 Una tarea debería tener 3 posibles interacciones:
 
-1. Cuando se haga clic en el checkbox las tareas es marcada como **completed**, de igual manera si se vuele a hacer clic sobre en el checkbox vuelve a su estado de **pending**.
-2. Si se hace doble clic en el  `<label>` se activa el modo edición.
-3. Si se hace la acción `:hover` en una tarea se debería mostrar el botón para eliminar (`.destroy`).
+1. Cuando se haga clic en el checkbox las tareas es marcada como **completed**, de igual manera si se vuele a hacer clic sobre en el checkbox vuelve a su estado de **pending**.✔
+2. Si se hace doble clic en el  `<label>` se activa el modo edición.✔
+3. Si se hace la acción `:hover` en una tarea se debería mostrar el botón para eliminar (`.destroy`).✔
 
 ### 4. Editando una tarea
 

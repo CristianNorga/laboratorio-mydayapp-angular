@@ -18,7 +18,7 @@ export class TasksService {
 
     const task: Task = {
       name: text,
-      state: 'pending'
+      isCompleted: false
     }
 
     this.tasks.push(task)
@@ -26,5 +26,9 @@ export class TasksService {
     console.log('TasksService.addTask', task)
 
     this.itemsSource.next(this.tasks)
+  }
+
+  changeState(tasks: Task[]): void{
+    this.tasks = tasks
   }
 }

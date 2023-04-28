@@ -1,38 +1,20 @@
 <section class="main">
   <ul class="todo-list">
-    <h2>reales</h2>
-    <li *ngFor="let task of tasks" [ngClass]="{'completed': (task.state === 'completed')}">
+    <li *ngFor="let task of tasks; index as i" [ngClass]="{'completed': task.isCompleted, 'editing': task.isEdit}">
       <div class="view">
-        <input class="toggle" type="checkbox" [checked]="(task.state === 'completed')"/>
-        <label>{{task.name}}</label>
+        <input (click)="mark(i)" class="toggle" type="checkbox" [checked]="task.isCompleted"/>
+        <label (dblclick)="enableEdit(i)">{{task.name}}</label>
         <button class="destroy"></button>
       </div>
       <input class="edit" [value]="task.name" />
     </li>
-    <h2>ejemplos</h2>
-    <li class="completed">
-      <div class="view">
-        <input class="toggle" type="checkbox" checked />
-        <label>Learn JavaScript</label>
-        <button class="destroy"></button>
-      </div>
-      <input class="edit" value="Learn JavaScript" />
-    </li>
-    <li>
-      <div class="view">
-        <input class="toggle" type="checkbox" />
-        <label>Buy a unicorn</label>
-        <button class="destroy"></button>
-      </div>
-      <input class="edit" value="Buy a unicorn" />
-    </li>
-    <li class="editing">
+    <!-- <li class="editing">
       <div class="view">
         <input class="toggle" type="checkbox" />
         <label>Make dishes</label>
         <button class="destroy"></button>
       </div>
       <input class="edit" value="Make dishes" />
-    </li>
+    </li> -->
   </ul>
 </section>

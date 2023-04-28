@@ -1,7 +1,8 @@
-type States = 'pending' | 'completed';
+// type States = 'pending' | 'completed';
 
 export interface Task {
   // id: string;
   name: string;
-  state: States
+  isCompleted: boolean
+  isEdit?: boolean
 }

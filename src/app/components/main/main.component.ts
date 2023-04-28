@@ -17,4 +17,14 @@ export class MainComponent implements OnInit {
   ngOnInit(){
     this.tasksService.currentItems.subscribe(newData => this.tasks = newData)
   }
+
+  mark(index: number): void{
+    this.tasks[index].isCompleted = !this.tasks[index].isCompleted
+
+    this.tasksService.changeState(this.tasks);
+  }
+
+  enableEdit(index: number): void{
+    this.tasks[index].isEdit = true
+  }
 }
