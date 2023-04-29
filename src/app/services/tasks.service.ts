@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 import { Task } from '../models/task.model'
 
@@ -8,15 +8,53 @@ import { Task } from '../models/task.model'
 })
 export class TasksService {
   private itemsSource = new BehaviorSubject<Task[]>([]);
-  currentItems = this.itemsSource.asObservable();
+  currentItems$ = this.itemsSource.asObservable().pipe(
+    map((items)=> this.filterByPath(items))
+    )
 
   tasks: Task[] = [];
+  path: string = '';
+
+  // .pipe(
+  //   map((task) => {
+  //     let { path } = JSON.parse(this.route.toString())
+  //     switch (path) {
+  //       case 'pending':
+  //         return task.isCompleted;
+  //       case 'completed':
+  //         return false;
+  //       case '':
+  //       case 'all':
+  //       default:
+  //         return true;
+  //     }
+  //   })
+  // ).
 
   constructor() { }
 
   private notify(){
     this.itemsSource.next(this.tasks)
     this.saveData()
+  }
+
+  filterByPath(tasks: Task[]){
+    tasks = tasks.filter((task)=>{
+      switch (this.path) {
+        case 'pending':
+          return !task.isCompleted;
+        case 'completed':
+          return task.isCompleted;
+        case '':
+        case 'all':
+        default:
+          return true;
+      }
+    })
+    return tasks
+  }
+  changePath(newPath: string | undefined){
+    this.path = newPath ? newPath : '';
   }
 
   addTask(text: string): void {

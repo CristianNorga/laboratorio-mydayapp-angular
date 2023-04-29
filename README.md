@@ -142,7 +142,7 @@ Una tarea debería tener 3 posibles interacciones:
 
 - Debería existir un botón para eliminar todas las tareas que están con estado de **completed**.✔
 
-### 7. Persistencia
+### 7. Persistencia ✔
 
 - Cuando se recargue la aplicación se debe obtener las tareas, para esto tu aplicación debería guardar las tareas en LocalStorage.✔
 - El key que se debe usar para el LocalStorage debe ser `mydayapp-angular`, esto es importante ya que las [pruebas e2e](#pruebas) van a verificar el LocalStorage con esta la key `mydayapp-angular`.✔
@@ -152,9 +152,9 @@ Una tarea debería tener 3 posibles interacciones:
 
 Deben existir tres filtros que funcione desde la URL y funcionan como links en el footer:
 
-- `/all`: Muestra todas las tareas tanto las que están en estado de **completed** y **pending**.
-- `/pending`: Muestra todas las tareas en estado **pending**.
-- `/completed`: Muestra todas las tareas en estado **completed**.
+- `/all`: Muestra todas las tareas tanto las que están en estado de **completed** y **pending**.✔
+- `/pending`: Muestra todas las tareas en estado **pending**.✔
+- `/completed`: Muestra todas las tareas en estado **completed**.✔
 
 ### 9. Deployment
 

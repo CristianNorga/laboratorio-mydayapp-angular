@@ -1,39 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Task } from '../../models/task.model';
+import { ActivatedRoute } from '@angular/router';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  
 })
 export class HomeComponent implements OnInit {
 
-  tasks: Task[] = [];
-
-
-  constructor(private tasksService: TasksService) { }
-
-  ngOnInit() {
-    this.tasksService.currentItems.subscribe(newData => this.tasks = newData)
-
-    let laodStore = localStorage.getItem('mydayapp-angular');
-    if (laodStore){
-      this.tasksService.loadData(laodStore);
-    } else {
-      localStorage.setItem('mydayapp-angular', '[]');
-    }
-
+  constructor(private route: ActivatedRoute, private tasksService: TasksService){}
+  
+  ngOnInit(){
+    let path = this.route.snapshot.routeConfig?.path;
+    this.tasksService.changePath(path);
   }
-
-  captureText(event: any): void{
-    let text: string = event.target.value;
-    
-    text = text.trim();
-    if (!text) return;
-
-    this.tasksService.addTask(text);
-    event.target.value = '';
-  }
-
+  
 }

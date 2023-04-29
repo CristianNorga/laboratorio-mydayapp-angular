@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 import { Task } from 'src/app/models/task.model';
 import { TasksService } from 'src/app/services/tasks.service';
@@ -18,7 +19,7 @@ export class MainComponent implements OnInit, OnDestroy {
   constructor(private tasksService: TasksService){}
 
   ngOnInit(){
-    this.tasksService.currentItems.subscribe(newData => this.tasks = newData)
+    this.tasksService.currentItems$.subscribe(newData => this.tasks = newData)
   }
 
   ngOnDestroy() {

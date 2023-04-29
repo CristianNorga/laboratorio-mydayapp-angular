@@ -1,16 +1,40 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Task } from 'src/app/models/task.model';
+import { Task } from '../../models/task.model';
+import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css']
 })
-export class LayoutComponent {
-  @Input() test: Task[] = [];
-  // @Input('test')
-  // set changeImg(newImg: string) {
-  //   this.img = newImg;
-  // }
+export class LayoutComponent implements OnInit {
+
+  tasks: Task[] = [];
+
+
+  constructor(private tasksService: TasksService) { }
+
+  ngOnInit() {
+
+    this.tasksService.currentItems$.subscribe(newData => this.tasks = newData)
+
+    let laodStore = localStorage.getItem('mydayapp-angular');
+    if (laodStore) {
+      this.tasksService.loadData(laodStore);
+    } else {
+      localStorage.setItem('mydayapp-angular', '[]');
+    }
+
+  }
+
+  captureText(event: any): void {
+    let text: string = event.target.value;
+
+    text = text.trim();
+    if (!text) return;
+
+    this.tasksService.addTask(text);
+    event.target.value = '';
+  }
+
 }

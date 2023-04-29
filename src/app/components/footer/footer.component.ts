@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.tasksService.currentItems.subscribe(newData => {
+    this.tasksService.currentItems$.subscribe(newData => {
       this.pending = newData.filter(task => !task.isCompleted).length
     })
   }
